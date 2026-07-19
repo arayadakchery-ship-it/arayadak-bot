@@ -1,0 +1,20 @@
+[Unit]
+Description=Arayadak Telegram Bot
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/opt/arayadak-bot
+ExecStart=/usr/bin/python3 bot.py
+Restart=on-failure
+RestartSec=5
+
+# Set secrets as environment variables (edit these before deploying)
+Environment="BOT_TOKEN=YOUR_TOKEN_HERE"
+Environment="WHATSAPP=989131634786"
+Environment="PHONE=09131634786"
+Environment="ADMIN_ID=0"
+
+[Install]
+WantedBy=multi-user.target
